@@ -15,7 +15,7 @@ class App extends Component {
     let pub_key = 'b128578135ff747b60902c97bb100a9c43185337';
 
     let hashed_data = md5(ts + pk + pub_key);
-    let url_end_point = "http://gateway.marvel.com/v1/comics?ts="+ts+"&apikey="+ pk + "&hash="+hashed_data;
+    let url_end_point = "http://gateway.marvel.com/v1/public/characters?name=Spider-Man&ts="+ts+"&apikey="+ pub_key + "&hash="+hashed_data;
 
     fetch(url_end_point).then(function(response) {
         console.log( response);
