@@ -3,7 +3,18 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.authenticate = this.authenticate.bind(this);
+  }
+  authenticate(){
+
+    fetch('http://gateway.marvel.com:80/v1/public/characters?name=Spider-Man&apikey=d16f65a18b67e96a5e7bd55de1c675c4').then(function(response) {
+        console.log( response);
+    })
+  }
   render() {
+    this.authenticate();
     return (
       <div className="App">
         <div className="App-header">
