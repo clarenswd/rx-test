@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Layout from './components/Layout';
 import './App.css';
+import AppRoutes from './components/AppRoutes';
 
 
 class App extends Component {
@@ -8,12 +9,13 @@ class App extends Component {
     super(props);
   }
    
+
+  //should I make the initial API query  here?
+
   render() {
-    
+
     return (
-      <div className="App">
-         <Layout/>
-      </div>
+      <AppRoutes/>
     );
   }
 }

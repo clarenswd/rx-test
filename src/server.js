@@ -25,8 +25,6 @@ app.get('/marvel/', function (req, res, next) {
                  } 
     }); 
       
-     
-    
   
 })
 

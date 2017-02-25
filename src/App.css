@@ -7,12 +7,18 @@
   height: 80px;
 }
 
-.App-header {
+body{
+  background: url(/static/media/superheroesblur.035b04c1.png);
+  background-size: cover;
+}
+
+header {
   background-color: #222;
   height: 150px;
   padding: 20px;
   color: white;
 }
+
 
 .App-intro {
   font-size: large;
@@ -21,4 +27,9 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+
+.app-container{
+  border:1px solid red;
 }
