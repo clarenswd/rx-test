@@ -15,7 +15,11 @@ export default class Layout extends React.Component {
              Home
           </Link>
         </header>
-        <div className="app-content">{this.props.children}</div>
+        
+        <div className="app-content">
+          {this.props.children}
+        </div>
+      
       </div>
     );
   }

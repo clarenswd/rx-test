@@ -1,14 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers');
 body{
   background: url(/static/media/superheroesblur.035b04c1.png);
   background-size: cover;
+  background-size: 170px;
 }
 
-header {
-  background-color: #f7f7f7;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
+
 .app-container{
-  border:1px solid red;
+  
+
+  header {
+    background-color: #000;
+    height: 20px;
+    padding: 20px;
+    color: white;
+    a{font-family: 'Bangers', cursive;
+      color:white;
+      text-decoration: none;
+    }
+  }
+
+  .app-content{
+    min-height: calc(100vh - 40px);
+    background: rgba(0, 0, 0, 0.74);
+ 
+  }
 }
+
+
