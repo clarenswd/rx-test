@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "nodemon": "^1.11.0",
     "react-scripts": "0.9.0"
   },
   "dependencies": {

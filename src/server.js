@@ -2,7 +2,7 @@ var express = require('express')
 var cors = require('cors')
 var app = express()
 var md5 = require('md5');
-var fetch = require('node-fetch');
+var request = require('request');
 
 app.use(cors())
 
@@ -15,17 +15,23 @@ app.get('/marvel/', function (req, res, next) {
 	 
     let hashed_data = md5(ts + pri_key + pub_key);
     
-    console.log(hashed_data);
+    // console.log(hashed_data);
     let url_end_point = "http://gateway.marvel.com/v1/public/characters?name=Spider-Man&ts="+ts+"&apikey="+ pub_key + "&hash="+hashed_data;
-     
-    console.log(url_end_point);
-    fetch(url_end_point).then(function(response) {
-         console.log(response.statusText);          
-    });
+    
 
+
+    request.get({ url: url_end_point },
+           function(error, response, body) { 
+              if (!error && response.statusCode == 200) { 
+                  res.json(body); 
+                 } 
+    }); 
+      
+     
+    
   
 })
 
 app.listen(8080, function () {
-  console.log('CORS-enabled web server listening on port 80')
+  console.log('CORS-enabled web server listening on port 8080')
 })
