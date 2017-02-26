@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 export default class ComicCard extends React.Component {
     render() {
         return (
-        <li>
+         
            <Link to={`/comic/${this.props.id}`}>
               <div className="comiccard" style={{background:'red'}}>
                     <div className="comicdata">
@@ -13,7 +13,7 @@ export default class ComicCard extends React.Component {
                     </div>
               </div>
           </Link>
-        </li>
+         
         );
   }
 }

@@ -25,17 +25,31 @@ body{
   }
 }
 
+
+
+//IndexPage.js
 .comiclist{
+  margin: 0px;
+  padding:0px;
+
   li{
     border: 1px solid white;
     background: transparent!important;
     width: 33%;
     float: left;
-    list-type:none;
+    list-style-type:none;
+    //reset links
+    a{
+      text-decoration: none;
+      color:white;
+    }
   }
 }
-//comic card
+
+
+//ComicCard.js
 .comiccard{
+
     
 }
 
