@@ -32,7 +32,8 @@ app.get('/marvel/:endpoint/', function (req, res, next) {
     request.get({ url: url_end_point },
            function(error, response, body) { 
               if (!error && response.statusCode == 200) { 
-                  res.json(body); 
+             
+                res.json(body); 
               } 
     }); 
       
