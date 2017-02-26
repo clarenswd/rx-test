@@ -20,7 +20,7 @@ export default class ComicCard extends React.Component {
                     <div className="comicdata">
                        <h1 className="title">{this.props.title}</h1>
                        <p>{(this.props.description)? this.props.description:"No description for this comic"}</p>
-                       <button className="btn_btn">View more</button>
+                       <button className="view_more">View more</button>
                     </div>
                   </div>
               </Link>
