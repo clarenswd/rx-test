@@ -2,6 +2,7 @@
 import React from 'react';
 import ComicCard from './ComicCard';
 import Comics from './Comics';
+import Search from './Search';
 export default class IndexPage extends React.Component {
     constructor(props){
         super(props);
@@ -23,15 +24,14 @@ export default class IndexPage extends React.Component {
     render() {
         return (
           <div className="home">
-             
-
+            <Search/>
             <ul  className="comiclist">  
          
-            {
-                this.state.comics.map(
-                    comicData => <ComicCard key={comicData.id} {...comicData} />
-                )
-            }
+                {
+                    this.state.comics.map(
+                        comicData => <ComicCard key={comicData.id} {...comicData} />
+                    )
+                }
     
             </ul>
           </div>
