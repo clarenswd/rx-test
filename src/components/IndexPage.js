@@ -27,9 +27,11 @@ export default class IndexPage extends React.Component {
 
             <ul  className="comiclist">  
          
-            {this.state.comics.map(
-                comicData =><li><ComicCard key={comicData.id} {...comicData} /></li>
-            )}
+            {
+                this.state.comics.map(
+                    comicData => <ComicCard key={comicData.id} {...comicData} />
+                )
+            }
     
             </ul>
           </div>
