@@ -12,7 +12,27 @@ $mobile: 640px;
 body{
 
 }
-
+.btn_btn{
+  font-family: 'Bahiana', cursive;
+  font-size: 1em;
+  text-align: center;
+  line-height: 1.2;
+  color: white;
+  width: 120px;
+  height: 40px;
+  border-radius: 300px;
+  background-color: rgb(134, 49, 49);
+  border: solid rgba(146, 146, 44, 1) 0px;
+  box-shadow: 1px 1px #746367, 3px 3px #746367, 5px 5px #746367, 7px 7px #746367, 9px 9px #746367;
+  transition: all 0.12s ease 0s;
+  position: relative;
+  outline:none;
+  cursor:pointer;
+  &:hover{
+    background-color: #501e1e;
+    border-color: rgba(255, 255, 255, 1);
+  }
+}
 
 .app-container{
   header {
@@ -48,6 +68,9 @@ body{
         background: #141519;
         margin: 100px auto;
         text-align: center;
+        @media(max-width: $mobile){
+          width: 90%;
+        }
         .search_input{
           background-color: #22232a;
           border-radius: 45px;
@@ -68,26 +91,7 @@ body{
         }
 
         .search_btn {
-        font-family: 'Bahiana', cursive;
-        font-size: 1em;
-        text-align: center;
-        line-height: 1.2;
-        color: white;
-        width: 120px;
-        height: 40px;
-        border-radius: 300px;
-        background-color: rgb(134, 49, 49);
-        border: solid rgba(146, 146, 44, 1) 0px;
-        box-shadow: 1px 1px #746367, 3px 3px #746367, 5px 5px #746367, 7px 7px #746367, 9px 9px #746367;
-        transition: all 0.12s ease 0s;
-        position: relative;
-        outline:none;
-        cursor:pointer;
-        &:hover{
-          background-color: #501e1e;
-          border-color: rgba(255, 255, 255, 1);
-            
-        }
+          @extend .btn_btn;
 
 
         }

@@ -1,6 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Bangers");
 @import url("https://fonts.googleapis.com/css?family=Bahiana");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
+.btn_btn, .app-container .app-content .home .search_component .search_btn {
+  font-family: 'Bahiana', cursive;
+  font-size: 1em;
+  text-align: center;
+  line-height: 1.2;
+  color: white;
+  width: 120px;
+  height: 40px;
+  border-radius: 300px;
+  background-color: #863131;
+  border: solid #92922c 0px;
+  box-shadow: 1px 1px #746367, 3px 3px #746367, 5px 5px #746367, 7px 7px #746367, 9px 9px #746367;
+  transition: all 0.12s ease 0s;
+  position: relative;
+  outline: none;
+  cursor: pointer; }
+  .btn_btn:hover, .app-container .app-content .home .search_component .search_btn:hover {
+    background-color: #501e1e;
+    border-color: white; }
+
 .app-container header {
   background-color: #000;
   height: 20px;
@@ -27,6 +47,9 @@
       background: #141519;
       margin: 100px auto;
       text-align: center; }
+      @media (max-width: 640px) {
+        .app-container .app-content .home .search_component {
+          width: 90%; } }
       .app-container .app-content .home .search_component .search_input {
         background-color: #22232a;
         border-radius: 45px;
@@ -42,25 +65,6 @@
           color: #a4abb7;
           font-size: 15px;
           font-weight: 500; }
-      .app-container .app-content .home .search_component .search_btn {
-        font-family: 'Bahiana', cursive;
-        font-size: 1em;
-        text-align: center;
-        line-height: 1.2;
-        color: white;
-        width: 120px;
-        height: 40px;
-        border-radius: 300px;
-        background-color: #863131;
-        border: solid #92922c 0px;
-        box-shadow: 1px 1px #746367, 3px 3px #746367, 5px 5px #746367, 7px 7px #746367, 9px 9px #746367;
-        transition: all 0.12s ease 0s;
-        position: relative;
-        outline: none;
-        cursor: pointer; }
-        .app-container .app-content .home .search_component .search_btn:hover {
-          background-color: #501e1e;
-          border-color: white; }
 
 .comiclist {
   margin: 0px;
