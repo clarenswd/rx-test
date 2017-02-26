@@ -42,6 +42,9 @@
     list-style-type: none;
     padding: 1rem;
     box-sizing: border-box; }
+    @media (max-width: 640px) {
+      .comiclist li {
+        width: 100%; } }
     .comiclist li a {
       text-decoration: none;
       color: white; }

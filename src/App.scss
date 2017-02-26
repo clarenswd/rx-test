@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Bangers');
 //Btn, headings
 @import url('https://fonts.googleapis.com/css?family=Bahiana');
+
+//variables
+$mobile: 640px;
+
 body{
 
 }
@@ -70,6 +74,10 @@ body{
     list-style-type:none;
     padding:1rem;
     box-sizing:border-box;
+    @media(max-width: $mobile){
+      width: 100%;
+
+    }
     //reset links
     a{
       text-decoration: none;
