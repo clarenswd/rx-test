@@ -1,7 +1,7 @@
 // src/components/IndexPage.js
 import React from 'react';
 import ComicCard from './ComicCard';
-
+import Comics from './Comics';
 export default class IndexPage extends React.Component {
     constructor(props){
         super(props);
@@ -9,12 +9,15 @@ export default class IndexPage extends React.Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:8080/marvel/comics")
-            .then( (response) => { return response.json() })   
-                    .then( (json) => {
-                        let jsonObj = JSON.parse(json);
-                        this.setState({comics:jsonObj.data.results });
-                    });
+         
+         
+        this.setState({comics:Comics.data.results});
+        // fetch("http://localhost:8080/marvel/comics")
+        //     .then( (response) => { return response.json() })   
+        //             .then( (json) => {
+        //                 let jsonObj = JSON.parse(json);
+        //                 this.setState({comics:jsonObj.data.results });
+        //             });
     };
     // Print comics obj ::>> {this.state.comics.toString()}
     render() {
