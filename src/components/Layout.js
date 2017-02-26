@@ -2,14 +2,21 @@
 import React from 'react';
 import { Link } from 'react-router';
 import superheroesblur from '../static/img/superheroesblur.png';
+import superheroesblack from '../static/img/superheroesblack.png';
 
-const logoStyle = {
-  maxWidth: '300px',
-};
+
+ 
+const backgroundImage = {
+            backgroundImage: 'url(' +superheroesblack+ ')', 
+            overflow: "auto", 
+            backgroundSize: 170,
+            backgroundAttachment: "fixed",
+        }
+
 export default class Layout extends React.Component {
   render() {
     return (
-      <div className="app-container">
+      <div className="app-container" style={backgroundImage}>
         <header>
           <Link to="/">
              Home

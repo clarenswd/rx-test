@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Bangers');
 body{
-  background: url(/static/media/superheroesblur.035b04c1.png);
-  background-size: cover;
-  background-size: 170px;
+
 }
 
 
@@ -12,16 +10,23 @@ body{
     height: 20px;
     padding: 20px;
     color: white;
-    a{font-family: 'Bangers', cursive;
+    a{
+      font-family: 'Bangers', cursive;
       color:white;
       text-decoration: none;
     }
   }
 
   .app-content{
-    border:1px solid white;
+    
     min-height: calc(100vh - 40px);
-    background: rgba(0, 0, 0, 0.74);
+    background: rgba(0, 0, 0, 0.34);
+    .home{
+      //data is being dynamically added.
+      overflow:auto;
+      max-width:1100px;
+      margin:0 auto;
+    }
   }
 }
 
@@ -33,7 +38,7 @@ body{
   padding:0px;
 
   li{
-    border: 1px solid white;
+    // border: 1px solid white;
     background: transparent!important;
     width: 33%;
     float: left;
@@ -51,11 +56,34 @@ body{
 
 //ComicCard.js
 .comiccard{
+    // when using thumbnails as BG
     min-height: 555px;
     background-size: 200px;
     background-repeat: no-repeat;
-    background-color: black!important;
+    background-color:rgba(0, 0, 0, 0.55) !important;
     background-position: center 40px;
+    border-radius: 0.25rem;
+    padding:10px;
+    .imgWrapper{
+      img{
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+        display: block;
+        border-radius: 0px 30px 30px 0px;
+      }      
+    }
+
+
+    .comicdata{
+      h1{
+        font-family: 'Bangers', cursive;
+        font-size: 16px;
+        text-align: center;
+        letter-spacing:1.5px;
+      }
+    }
+
 
     
 }

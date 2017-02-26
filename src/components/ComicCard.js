@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 export default class ComicCard extends React.Component {
     render() {
         let thumbnail_url =this.props.thumbnail.path + '.' + this.props.thumbnail.extension; 
-        var backgroundImage = {
+        let backgroundImage = {
             backgroundColor:'red',
             backgroundImage: 'url(' +thumbnail_url+ ')'
         }
@@ -13,10 +13,14 @@ export default class ComicCard extends React.Component {
         return (
             <li>
                <Link to={`/comic/${this.props.id}`}>
-                  <div className="comiccard" style={backgroundImage}>
-                        <div className="comicdata">
-                         comic preview data
-                        </div>
+                  <div className="comiccard" >
+                    <div className="imgWrapper">
+                      <img src={thumbnail_url} />
+                    </div>
+                    <div className="comicdata">
+                       <h1 className="title">{this.props.title}</h1>
+                       <p>{this.props.description}</p>
+                    </div>
                   </div>
               </Link>
             </li>
