@@ -1,6 +1,6 @@
 // src/components/IndexPage.js
 import React from 'react';
- 
+import ComicCard from './ComicCard';
 
 export default class IndexPage extends React.Component {
     constructor(props){
@@ -16,12 +16,19 @@ export default class IndexPage extends React.Component {
                         this.setState({comics:jsonObj.data.results });
                     });
     };
+    // Print comics obj ::>> {this.state.comics.toString()}
     render() {
         return (
           <div className="home">
-            <div className="">
-                {this.state.comics.toString()}
-            </div>
+             
+
+            <ul  className="comiclist">  
+         
+            {this.state.comics.map(
+                comicData => <ComicCard key={comicData.id} {...comicData} />
+            )}
+    
+            </ul>
           </div>
         );
   }

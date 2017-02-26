@@ -14,7 +14,15 @@ body {
     color: white;
     text-decoration: none; }
 .app-container .app-content {
+  border: 1px solid white;
   min-height: calc(100vh - 40px);
   background: rgba(0, 0, 0, 0.74); }
+
+.comiclist li {
+  border: 1px solid white;
+  background: transparent !important;
+  width: 33%;
+  float: left;
+  list-type: none; }
 
 /*# sourceMappingURL=App.css.map */
