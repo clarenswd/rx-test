@@ -7,13 +7,13 @@ export default class IndexPage extends React.Component {
     constructor(props){
         super(props);
         this.state={comics:[]};
+        this.filterComics = [];
         this.filterList = this.filterList.bind(this);
     }
 
     componentDidMount() {
          
-         
-        this.setState({comics:Comics.data.results});
+        this.setState({comics:Comics.data.results, filterComics:Comics.data.results});
         // fetch("http://localhost:8080/marvel/comics")
         //     .then( (response) => { return response.json() })   
         //             .then( (json) => {
@@ -23,8 +23,8 @@ export default class IndexPage extends React.Component {
     };
 
     filterList(event){
-        
-        var filteredList = this.state.comics;
+
+        var filteredList = this.state.filterComics;
         filteredList = filteredList.filter(function(item){
 
           return item.title.toLowerCase().search(
