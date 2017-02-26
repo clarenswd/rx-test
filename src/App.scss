@@ -38,6 +38,8 @@ body{
     width: 33%;
     float: left;
     list-style-type:none;
+    padding:1rem;
+    box-sizing:border-box;
     //reset links
     a{
       text-decoration: none;
@@ -49,6 +51,11 @@ body{
 
 //ComicCard.js
 .comiccard{
+    min-height: 555px;
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-color: black!important;
+    background-position: center 40px;
 
     
 }
