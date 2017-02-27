@@ -23,7 +23,6 @@ export default class CharactersPage extends React.Component {
 
     requestData(endpoint){
         console.log(this.state.endpoint);
-  
         fetch("http://d7d2d3ef.ngrok.io/marvel/" + endpoint)
             .then( (response) => { return response.json() })   
                     .then( (json) => {
@@ -31,8 +30,8 @@ export default class CharactersPage extends React.Component {
                         let jsonObj = JSON.parse(json);
                         this.setState({
                             comics:jsonObj.data.results, 
-                            filterComics:Comics.data.results
-                             });
+                            filterComics:jsonObj.data.results, 
+                        });
                     });
     }
 
@@ -43,6 +42,7 @@ export default class CharactersPage extends React.Component {
     filterList(event){
         console.log(this.state.filterComics);
         var filteredList = this.state.filterComics;
+
         filteredList = filteredList.filter(function(item){
         console.log(item);
           return item.name.toLowerCase().search(
