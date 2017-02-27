@@ -98,10 +98,13 @@
     float: left;
     list-style-type: none;
     padding: 1rem;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    color: white; }
     @media (max-width: 640px) {
       .comiclist li {
         width: 100%; } }
+    .comiclist li p, .comiclist li span {
+      color: white; }
     .comiclist li a {
       text-decoration: none;
       color: white; }
@@ -131,5 +134,12 @@
     font-size: 12px;
     line-height: 1.6;
     padding: 10px; }
+  .comiccard .comicdata .comicprice {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-align: center;
+    display: block;
+    margin-bottom: 10px; }
 
 /*# sourceMappingURL=App.css.map */

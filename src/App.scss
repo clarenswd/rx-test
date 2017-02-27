@@ -117,11 +117,15 @@ body{
     list-style-type:none;
     padding:1rem;
     box-sizing:border-box;
+    color:white;
     @media(max-width: $mobile){
       width: 100%;
 
     }
     //reset links
+    p, span{
+      color:white;
+    }
     a{
       text-decoration: none;
       color:white;
@@ -164,6 +168,14 @@ body{
         font-size: 12px;
         line-height: 1.6;
         padding: 10px;
+      }
+      .comicprice{
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
+        font-size: 1.4rem;
+        text-align: center;
+        display: block;
+        margin-bottom: 10px;
       }
     }
 

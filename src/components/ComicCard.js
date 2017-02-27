@@ -12,7 +12,6 @@ export default class ComicCard extends React.Component {
         
         return (
             <li>
-               <Link to={`/comic/${this.props.id}`}>
                   <div className="comiccard" >
                     <div className="imgWrapper">
                       <img src={thumbnail_url} />
@@ -20,12 +19,12 @@ export default class ComicCard extends React.Component {
                     <div className="comicdata">
                        <h1 className="title">{this.props.title}</h1>
                        <p>{(this.props.description)? this.props.description.substr(0,200)+"...":"No description for this comic"}</p>
+                       <span className="comicprice">${this.props.prices[0].price}</span>
                        <Link to={`/comic/${this.props.id}`}>
                         <button className="view_more">View more</button>
                        </Link>
                     </div>
                   </div>
-              </Link>
             </li>
          
         );
