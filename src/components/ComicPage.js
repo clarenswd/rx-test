@@ -54,6 +54,9 @@ export default class ComicPage extends React.Component {
     if(this.state.thumbnail !== 'undefined'){
       image = <img src= {this.state.thumbnail}/>
     } 
+
+    let characterlist  = (this.state.characters.length >0) ? "Characters in this comic:" : "No characters for this comic";
+          
     
     return (
       <div className="comic-full">
@@ -63,7 +66,9 @@ export default class ComicPage extends React.Component {
         <div className="comic-description">
           <h1 className="title">{this.state.comic.title}</h1>
           <p>{this.state.comic.description}</p>
+          {characterlist}
           <ul className="characters_list"> 
+
             {
                 this.state.characters.map(
                     characterData => <CharacterListItem key={characterData.id} {...characterData} />
