@@ -18,9 +18,19 @@ export default class Layout extends React.Component {
     return (
       <div className="app-container" style={backgroundImage}>
         <header>
+          <ul className="navi">
+          <li>
           <Link to="/">
              Home
           </Link>
+          </li>
+          <li>
+          <Link to="/">
+             Comics
+          </Link>
+          </li>
+            
+          </ul>
         </header>
         
         <div className="app-content">

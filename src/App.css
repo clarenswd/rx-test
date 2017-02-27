@@ -13,7 +13,8 @@
     text-decoration: none; }
 .app-container .app-content {
   min-height: calc(100vh - 40px);
-  background: rgba(0, 0, 0, 0.34); }
+  background: rgba(0, 0, 0, 0.34);
+  overflow: hidden; }
   .app-container .app-content .home {
     overflow: auto;
     max-width: 1100px;
@@ -149,11 +150,37 @@
   width: 90%;
   margin: 0 auto;
   padding: 50px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  overflow: auto; }
+  .comic-full .imgWrapper {
+    width: 40%;
+    float: left; }
+    @media (max-width: 640px) {
+      .comic-full .imgWrapper {
+        width: 100%; }
+        .comic-full .imgWrapper img {
+          width: 100%; } }
+  .comic-full .comic-description {
+    width: 60%;
+    display: block;
+    float: left;
+    padding: 50px;
+    box-sizing: border-box; }
+    @media (max-width: 640px) {
+      .comic-full .comic-description {
+        width: 100%; } }
   .comic-full p {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     font-size: 1em;
     line-height: 1.6; }
+
+.navi {
+  margin: 0;
+  padding: 0; }
+  .navi li {
+    display: inline-block;
+    margin-right: 15px;
+    list-style-type: none; }
 
 /*# sourceMappingURL=App.css.map */

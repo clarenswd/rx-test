@@ -54,6 +54,7 @@ body{
     
     min-height: calc(100vh - 40px);
     background: rgba(0, 0, 0, 0.34);
+    overflow:hidden;
     .home{
       //data is being dynamically added.
       overflow:auto;
@@ -152,6 +153,7 @@ body{
         display: block;
         border-radius: 0px 30px 30px 0px;
       }      
+
     }
 
 
@@ -193,6 +195,27 @@ body{
   margin: 0 auto;
   padding: 50px;
   box-sizing: border-box;
+  overflow:auto;
+  .imgWrapper{
+    width: 40%;
+    float: left;
+    @media(max-width: $mobile){
+        width: 100%;
+        img{
+          width: 100%;
+        }
+    }
+  }
+  .comic-description{
+    width: 60%;
+    display: block;
+    float: left;
+    padding: 50px;
+    box-sizing: border-box;
+    @media(max-width: $mobile){
+        width: 100%;
+    }
+  }
 
   p{
     font-family: 'Open Sans', sans-serif;
@@ -201,6 +224,16 @@ body{
     line-height: 1.6;
   }
 
+}
+
+.navi{
+  margin:0;
+  padding:0;
+  li{
+    display: inline-block;
+    margin-right: 15px;
+    list-style-type:none;
+  }
 }
 
 

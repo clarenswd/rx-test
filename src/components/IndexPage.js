@@ -12,24 +12,34 @@ export default class IndexPage extends React.Component {
         };
         this.filterComics = [];
         this.filterList = this.filterList.bind(this);
-
         this.requestData =  this.requestData.bind(this);
+    
     }
 
     requestData(endpoint){
+        console.log(this.state.endpoint);
         fetch("http://localhost:5000/marvel/" + endpoint)
             .then( (response) => { return response.json() })   
                     .then( (json) => {
-                        console.log("using fetch");
+                        console.log("using fetch " + endpoint);
                         let jsonObj = JSON.parse(json);
                         this.setState({comics:jsonObj.data.results });
                     });
     }
 
     componentDidMount() {
+            if (this.props.location.pathname == "/characters") {
+                 
+              
+                 
+                this.requestData("characters");
+            }else{
+                // this.setState({comics:Comics.data.results, filterComics:Comics.data.results});
+                this.requestData(this.state.endpoint);
+
+            }
          
-        // this.setState({comics:Comics.data.results, filterComics:Comics.data.results});
-        this.requestData(this.state.endpoint);
+
     };
 
     filterList(event){

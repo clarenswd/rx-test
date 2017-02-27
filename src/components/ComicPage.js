@@ -51,8 +51,10 @@ export default class ComicPage extends React.Component {
         <div className="imgWrapper">
            {image}
         </div>
-        <h1 className="title">{this.state.comic.title}</h1>
-        <p>{this.state.comic.description}</p>
+        <div className="comic-description">
+          <h1 className="title">{this.state.comic.title}</h1>
+          <p>{this.state.comic.description}</p>
+        </div>
       </div>
     );
   }
