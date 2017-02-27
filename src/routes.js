@@ -4,10 +4,12 @@ import { Route, IndexRoute } from 'react-router'
 import Layout from './components/Layout';
 import IndexPage from './components/IndexPage';
 import ComicPage from './components/ComicPage';
+import CharactersPage from './components/CharactersPage';
  
 const routes = (
   <Route path="/" component={Layout}>
     <IndexRoute component={IndexPage}/>
+    <Route path="characters" component={CharactersPage}/>
     <Route path="comic/:id" component={ComicPage}/>
 
   </Route>

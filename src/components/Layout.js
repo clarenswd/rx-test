@@ -20,14 +20,19 @@ export default class Layout extends React.Component {
         <header>
           <ul className="navi">
           <li>
-          <Link to="/">
-             Home
-          </Link>
+            <Link to="/">
+               Home
+            </Link>
           </li>
           <li>
-          <Link to="/">
-             Comics
-          </Link>
+            <Link to="/">
+               Comics
+            </Link>
+          </li>
+          <li>
+            <Link to="/characters">
+               characters
+            </Link>
           </li>
             
           </ul>

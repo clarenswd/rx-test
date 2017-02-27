@@ -1,13 +1,13 @@
-// src/components/IndexPage.js
+// src/components/CharactersPage.js
 import React from 'react';
 import ComicCard from './ComicCard';
 import Comics from './Comics';
 import Search from './Search';
-export default class IndexPage extends React.Component {
+export default class CharactersPage extends React.Component {
     constructor(props){
         super(props);
         this.state={
-            endpoint : "comics",
+            endpoint : "characters",
             comics:[]
         };
         this.filterComics = [];
@@ -30,9 +30,6 @@ export default class IndexPage extends React.Component {
     componentDidMount() {
              
                 this.requestData(this.state.endpoint);
-
-             
-         
 
     };
 
