@@ -17,7 +17,7 @@ export default class ComicPage extends React.Component {
   requestRelatedData(endpoint){
     //this.props.params.id
       let react_this = this;
-      fetch("http://d7d2d3ef.ngrok.io/marvel/comic/" + endpoint)
+      fetch("/marvel/comic/" + endpoint)
             .then( (response) => { return response.json() })   
             .then( (json) => {
                 let jsonObj = JSON.parse(json);

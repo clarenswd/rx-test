@@ -23,7 +23,7 @@ export default class CharactersPage extends React.Component {
 
     requestData(endpoint){
         console.log(this.state.endpoint);
-        fetch("http://d7d2d3ef.ngrok.io/marvel/" + endpoint)
+        fetch("/marvel/" + endpoint)
             .then( (response) => { return response.json() })   
                     .then( (json) => {
                         console.log("using fetch " + endpoint);
