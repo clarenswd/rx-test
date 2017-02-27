@@ -183,4 +183,34 @@
     margin-right: 15px;
     list-style-type: none; }
 
+/*
+  Character styles
+*/
+.characters_list {
+  margin: 10px 0px 0px;
+  padding: 0; }
+  .characters_list li {
+    border: 1px solid #cac6c6;
+    list-style-type: none;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-bottom: 10px; }
+  .characters_list .character .character_pic {
+    width: 10%;
+    display: block;
+    float: left; }
+    .characters_list .character .character_pic img {
+      width: 100%;
+      border-radius: 50%; }
+  .characters_list .character .character_info {
+    width: 90%;
+    display: block;
+    float: left;
+    box-sizing: border-box;
+    padding-left: 10px; }
+    .characters_list .character .character_info h1 {
+      margin: 0;
+      font-size: 1.2rem; }
+
 /*# sourceMappingURL=App.css.map */
