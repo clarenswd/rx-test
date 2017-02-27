@@ -9,6 +9,11 @@ export default class ComicCard extends React.Component {
             backgroundColor:'red',
             backgroundImage: 'url(' +thumbnail_url+ ')'
         }
+        let price_span  = [];
+        if (typeof this.props.prices !== 'undefined') {
+          price_span = <span className="comicprice">${this.props.prices[0].price}</span>;
+        }
+
         
         return (
             <li>
@@ -19,7 +24,8 @@ export default class ComicCard extends React.Component {
                     <div className="comicdata">
                        <h1 className="title">{this.props.title}</h1>
                        <p>{(this.props.description)? this.props.description.substr(0,200)+"...":"No description for this comic"}</p>
-                       <span className="comicprice">${this.props.prices[0].price}</span>
+                       
+                       {price_span}
                        <Link to={`/comic/${this.props.id}`}>
                         <button className="view_more">View more</button>
                        </Link>

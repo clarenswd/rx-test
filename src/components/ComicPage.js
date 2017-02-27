@@ -20,6 +20,8 @@ export default class ComicPage extends React.Component {
     return (
       <div className="comic-full">
         {id}
+
+        <p>It's the origin of the original Avenger, Ant-Man! Hank Pym has been known by a variety of names - including Ant-Man, Giant-Man, Goliath and Yellowjacket - he's been an innovative scientist, a famed su...It's the origin of the original Avenger, Ant-Man! Hank Pym has been known by a variety of names - including Ant-Man, Giant-Man, Goliath and Yellowjacket - he's been an innovative scientist, a famed su...</p>
       </div>
 
 
@@ -27,3 +29,4 @@ export default class ComicPage extends React.Component {
     );
   }
 }
+
