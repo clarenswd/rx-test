@@ -3,6 +3,8 @@ import React from 'react';
 import ComicCard from './ComicCard';
 import Comics from './Comics';
 import Search from './Search';
+ 
+
 export default class CharactersPage extends React.Component {
     constructor(props){
         super(props);
@@ -21,7 +23,8 @@ export default class CharactersPage extends React.Component {
 
     requestData(endpoint){
         console.log(this.state.endpoint);
-        fetch("https://localhost:5000/marvel/" + endpoint)
+  
+        fetch("http://d7d2d3ef.ngrok.io/marvel/" + endpoint)
             .then( (response) => { return response.json() })   
                     .then( (json) => {
                         console.log("using fetch " + endpoint);

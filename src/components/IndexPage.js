@@ -19,7 +19,7 @@ export default class IndexPage extends React.Component {
 
     requestData(endpoint){
         console.log(this.state.endpoint);
-        fetch("http://localhost:5000/marvel/" + endpoint)
+        fetch("http://d7d2d3ef.ngrok.io/marvel/" + endpoint)
             .then( (response) => { return response.json() })   
                     .then( (json) => {
                         console.log("using fetch " + endpoint);
