@@ -8,9 +8,12 @@ export default class CharactersPage extends React.Component {
         super(props);
         this.state={
             endpoint : "characters",
-            comics:[]
+            comics:[],
+            filterComics : [] 
+
         };
-        this.filterComics = [];
+ 
+        
         this.filterList = this.filterList.bind(this);
         this.requestData =  this.requestData.bind(this);
     
@@ -18,27 +21,28 @@ export default class CharactersPage extends React.Component {
 
     requestData(endpoint){
         console.log(this.state.endpoint);
-        fetch("http://localhost:5000/marvel/" + endpoint)
+        fetch("https://localhost:5000/marvel/" + endpoint)
             .then( (response) => { return response.json() })   
                     .then( (json) => {
                         console.log("using fetch " + endpoint);
                         let jsonObj = JSON.parse(json);
-                        this.setState({comics:jsonObj.data.results });
+                        this.setState({
+                            comics:jsonObj.data.results, 
+                            filterComics:Comics.data.results
+                             });
                     });
     }
 
-    componentDidMount() {
-             
+    componentDidMount() {             
                 this.requestData(this.state.endpoint);
-
     };
 
     filterList(event){
-
+        console.log(this.state.filterComics);
         var filteredList = this.state.filterComics;
         filteredList = filteredList.filter(function(item){
-
-          return item.title.toLowerCase().search(
+        console.log(item);
+          return item.name.toLowerCase().search(
             event.target.value.toLowerCase()) !== -1;
         });
         this.setState({comics: filteredList});
@@ -53,7 +57,7 @@ export default class CharactersPage extends React.Component {
          
                 {
                     this.state.comics.map(
-                        comicData => <ComicCard key={comicData.id} {...comicData} />
+                        comicData => <ComicCard key={comicData.id} title={comicData.name} {...comicData} />
                     )
                 }
     

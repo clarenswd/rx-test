@@ -8,9 +8,10 @@ export default class IndexPage extends React.Component {
         super(props);
         this.state={
             endpoint : "comics",
-            comics:[]
+            comics:[], 
+            filterComics : []
         };
-        this.filterComics = [];
+        
         this.filterList = this.filterList.bind(this);
         this.requestData =  this.requestData.bind(this);
     
@@ -23,16 +24,16 @@ export default class IndexPage extends React.Component {
                     .then( (json) => {
                         console.log("using fetch " + endpoint);
                         let jsonObj = JSON.parse(json);
-                        this.setState({comics:jsonObj.data.results });
+                        this.setState({
+                            comics:jsonObj.data.results, 
+                            filterComics:Comics.data.results
+                        });
                     });
     }
 
     componentDidMount() {
              
                 this.requestData(this.state.endpoint);
-
-             
-         
 
     };
 
