@@ -2,10 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router';
  
-//dev data
-import Comic from './Comic';
 
-export default class ComicPage extends React.Component {
+export default class SingleCharacterPage extends React.Component {
   constructor(props){
     super(props);
     this.state = {

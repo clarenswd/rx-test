@@ -14,11 +14,14 @@ export default class ComicCard extends React.Component {
           price_span = <span className="comicprice">${this.props.prices[0].price}</span>;
         }
         let view_more;
-        if (this.props.moreurl !== "undefined"){
+
+        if (this.props.moreurl == "characters"){
+
           view_more = <Link to={`/characters/${this.props.id}`}>
                         <button className="view_more">View more</button>
                        </Link>;
         }else{
+
           view_more = <Link to={`/comic/${this.props.id}`}>
                         <button className="view_more">View more</button>
                        </Link>;

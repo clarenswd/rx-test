@@ -60,7 +60,7 @@ export default class CharactersPage extends React.Component {
          
                 {
                     this.state.comics.map(
-                        comicData => <ComicCard key={comicData.id} title={comicData.name} {...comicData} />
+                        comicData => <ComicCard key={comicData.id} title={comicData.name} moreurl="characters" {...comicData} />
                     )
                 }
     
