@@ -26,6 +26,7 @@ export default class ComicCard extends React.Component {
                        <p>{(this.props.description)? this.props.description.substr(0,200)+"...":"No description for this comic"}</p>
                        
                        {price_span}
+
                        <Link to={`/comic/${this.props.id}`}>
                         <button className="view_more">View more</button>
                        </Link>

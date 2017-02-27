@@ -1,4 +1,3 @@
-"use strict";
 const Comics = {
     "code": 200,
     "status": "Ok",

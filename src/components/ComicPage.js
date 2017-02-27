@@ -9,19 +9,34 @@ export default class ComicPage extends React.Component {
   constructor(props){
     super(props);
     this.state = {comic:{}};
-  }
+    this.requestRelatedData = this.requestRelatedData.bind(this);
+   }
+  requestRelatedData(endpoint){
+    //this.props.params.id
+      fetch("http://localhost:5000/marvel/comic/" + endpoint)
+            .then( (response) => { return response.json() })   
+            .then( (json) => {
+                let jsonObj = JSON.parse(json);
+                console.log(jsonObj);
+
+                //CHECK THIS 
+                this.setState({comic:jsonObj.data.results[0] });
+            });
+  } 
   componentDidMount() {
-    this.setState({comic:Comic.data.results[0]});
-    //Do the request with fetch here
+    console.log("cdm");
+    this.requestRelatedData(this.props.params.id);
+     
   }
+
+
   render() {
     const id = this.props.params.id;
-     
+    
     return (
       <div className="comic-full">
-        {id}
-
-        <p>It's the origin of the original Avenger, Ant-Man! Hank Pym has been known by a variety of names - including Ant-Man, Giant-Man, Goliath and Yellowjacket - he's been an innovative scientist, a famed su...It's the origin of the original Avenger, Ant-Man! Hank Pym has been known by a variety of names - including Ant-Man, Giant-Man, Goliath and Yellowjacket - he's been an innovative scientist, a famed su...</p>
+        <h1 className="title">{this.state.comic.title}</h1>
+        <p>{this.state.comic.description}</p>
       </div>
 
 
@@ -29,4 +44,11 @@ export default class ComicPage extends React.Component {
     );
   }
 }
+
+
+/**
+ *  To research: ... how to pass props via Link to children components?
+ *  I have problems with inmutability, inmmutable.js might help or underscores.
+
+ */
 
