@@ -14,7 +14,7 @@ If you would like to run the app on your local machine:
 - clone repo, 
 - install packages
 - `npm run build` to build the front end. 
-- node server.js 
+- `node server.js` 
 - `http://localhost:5000/` should take you to the index page.
 
 
