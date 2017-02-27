@@ -4,7 +4,15 @@ var app = express()
 var md5 = require('md5');
 var request = require('request');
 
-app.use(cors())
+app.use(cors());
+
+
+//Show React index page
+app.use('/', express.static('build'));
+app.get('/', (req, res, next) => {
+    res.send();
+});
+
 
 function buildEndpoint (jx_param){
     let ts = '1';    
@@ -40,6 +48,8 @@ app.get('/marvel/:endpoint/', function (req, res, next) {
   
 })
 
-app.listen(8080, function () {
-  console.log('CORS-enabled web server listening on port 8080')
+
+var port = process.env.PORT || 5000;
+app.listen(port, function () {
+  console.log('CORS-enabled web server listening on port '+port)
 })
