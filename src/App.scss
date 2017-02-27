@@ -214,6 +214,7 @@ body{
     box-sizing: border-box;
     @media(max-width: $mobile){
         width: 100%;
+        padding:0px;
     }
   }
 
@@ -250,12 +251,28 @@ body{
     box-sizing: border-box;
     border-radius: 10px;
     margin-bottom: 10px;
+    overflow:auto;
+    a{
+      color: #333;
+      &:focus, &:visited, &:hover{
+        color: #333;
+      }
+
+    }
   }
   .character{
     .character_pic{
       width: 10%;
       display: block;
       float: left;
+      @media(max-width: $mobile){
+        width: 30%;
+        display: block;
+        float: left;
+        margin: 0 auto;
+        float: none;
+        margin-bottom: 20px;
+      }
       img{
         width: 100%;
         border-radius: 50%;
@@ -267,10 +284,16 @@ body{
       float: left; 
       box-sizing: border-box;
       padding-left: 10px;
-  
+      @media(max-width: $mobile){
+        width: 100%;
+      }
       h1{
+        color: #333;
         margin: 0;
         font-size: 1.2rem;
+      }
+      p{
+        color: #333;
       }
     }
   }
@@ -278,3 +301,12 @@ body{
 }
 
 
+.amessage{
+  display: block;
+  text-align: center;
+  font-family: Bangers, cursive;
+  font-size: 4vw;
+  position: relative;
+  top: -30px;
+  color: #e2cf63;
+}

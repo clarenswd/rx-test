@@ -9,12 +9,13 @@ export default class IndexPage extends React.Component {
         this.state={
             endpoint : "comics",
             comics:[], 
-            filterComics : []
+            filterComics : [], 
+            searchClicked : false
         };
         
         this.filterList = this.filterList.bind(this);
         this.requestData =  this.requestData.bind(this);
-    
+        this.searchClicked = this.searchClicked.bind(this);
     }
 
     requestData(endpoint){
@@ -32,9 +33,7 @@ export default class IndexPage extends React.Component {
     }
 
     componentDidMount() {
-             
-                this.requestData(this.state.endpoint);
-
+        this.requestData(this.state.endpoint);
     };
 
     filterList(event){
@@ -48,19 +47,29 @@ export default class IndexPage extends React.Component {
         this.setState({comics: filteredList});
 
     }
+    searchClicked(event){
+        alert();
+        this.setState({searchClicked:true});
+    }
+
     // Print comics obj ::>> {this.state.comics.toString()}
     render() {
+        let msg ;
+        if(this.state.searchClicked){
+            msg = <span className="amessage">Nothing to search, the api doesn't allow it.</span>;
+        }
+ 
         return (
           <div className="home">
-            <Search filterList={this.filterList}/>
-            <ul  className="comiclist">  
-         
-                {
+            <Search clickevent={this.searchClicked} filterList={this.filterList}/>
+            {msg}
+
+            <ul className="comiclist">  
+               {
                     this.state.comics.map(
                         comicData => <ComicCard key={comicData.id} {...comicData} />
                     )
-                }
-    
+                }  
             </ul>
           </div>
         );

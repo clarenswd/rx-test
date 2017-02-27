@@ -14,7 +14,7 @@ const routes = (
     <Route path="characters" component={CharactersPage}/>
     
     <Route path="comic/:id" component={ComicPage}/>
-    <Route path="character/:id" component={SingleCharacterPage}/>
+    <Route path="characters/:id" component={SingleCharacterPage}/>
 
   </Route>
 );

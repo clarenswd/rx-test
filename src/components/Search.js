@@ -5,7 +5,7 @@ export default class Search extends React.Component {
         return(
             <div className="search_component">
                 <input type="text" className="search_input" onChange={this.props.filterList} placeholder="Spiderman, Antman,... "/>
-                <button className="search_btn">Search</button>
+                <button className="search_btn" onClick={this.props.clickevent}>Search</button>
             </div>
         );
     }

@@ -59,7 +59,7 @@ app.get('/marvel/comic/:comicid', function (req, res, next) {
 });
 
 /*
-  Endpoint to get Comics' characters
+  Endpoint to get Comics' list of characters
 */
 app.get('/marvel/comic_characters/:comicid', function (req, res, next) {
   
@@ -74,7 +74,21 @@ app.get('/marvel/comic_characters/:comicid', function (req, res, next) {
     }); 
 });
 
-
+/*
+  Endpoint to get details of a specific character
+*/
+app.get('/marvel/character/:charid', function (req, res, next) {
+  
+    let  single_comic_url = "characters/"+req.params.charid;
+    url_end_point = buildEndpoint(single_comic_url);
+   
+    request.get({ url: url_end_point },
+      function(error, response, body) { 
+        if (!error && response.statusCode == 200) { 
+          res.json(body); 
+        } 
+    }); 
+});
 
 var port = process.env.PORT || 5000;
 app.listen(port, function () {

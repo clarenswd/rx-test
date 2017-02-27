@@ -7,6 +7,7 @@ export default class CharacterListItem extends React.Component {
         let thumbnail_url =this.props.thumbnail.path + '.' + this.props.thumbnail.extension; 
         return (
             <li>
+              <Link to={`/characters/${this.props.id}`}>
               <div className="character" >
                   <div className="character_pic">
                       <img src={thumbnail_url}/>
@@ -16,6 +17,7 @@ export default class CharacterListItem extends React.Component {
                        <p>{(this.props.description)? this.props.description.substr(0,200)+"...":"No description for this character"}</p>
                   </div>
               </div>
+              </Link>
             </li>
          
         );

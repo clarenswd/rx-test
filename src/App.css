@@ -168,7 +168,8 @@
     box-sizing: border-box; }
     @media (max-width: 640px) {
       .comic-full .comic-description {
-        width: 100%; } }
+        width: 100%;
+        padding: 0px; } }
   .comic-full p {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
@@ -195,11 +196,24 @@
     padding: 10px;
     box-sizing: border-box;
     border-radius: 10px;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    overflow: auto; }
+    .characters_list li a {
+      color: #333; }
+      .characters_list li a:focus, .characters_list li a:visited, .characters_list li a:hover {
+        color: #333; }
   .characters_list .character .character_pic {
     width: 10%;
     display: block;
     float: left; }
+    @media (max-width: 640px) {
+      .characters_list .character .character_pic {
+        width: 30%;
+        display: block;
+        float: left;
+        margin: 0 auto;
+        float: none;
+        margin-bottom: 20px; } }
     .characters_list .character .character_pic img {
       width: 100%;
       border-radius: 50%; }
@@ -209,8 +223,23 @@
     float: left;
     box-sizing: border-box;
     padding-left: 10px; }
+    @media (max-width: 640px) {
+      .characters_list .character .character_info {
+        width: 100%; } }
     .characters_list .character .character_info h1 {
+      color: #333;
       margin: 0;
       font-size: 1.2rem; }
+    .characters_list .character .character_info p {
+      color: #333; }
+
+.amessage {
+  display: block;
+  text-align: center;
+  font-family: Bangers, cursive;
+  font-size: 4vw;
+  position: relative;
+  top: -30px;
+  color: #e2cf63; }
 
 /*# sourceMappingURL=App.css.map */

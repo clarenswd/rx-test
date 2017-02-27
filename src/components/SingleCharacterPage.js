@@ -15,7 +15,7 @@ export default class SingleCharacterPage extends React.Component {
   requestRelatedData(endpoint){
     //this.props.params.id
       let react_this = this;
-      fetch("http://d7d2d3ef.ngrok.io/marvel/comic/" + endpoint)
+      fetch("/marvel/character/" + endpoint)
             .then( (response) => { return response.json() })   
             .then( (json) => {
                 let jsonObj = JSON.parse(json);
@@ -50,7 +50,7 @@ export default class SingleCharacterPage extends React.Component {
            {image}
         </div>
         <div className="comic-description">
-          <h1 className="title">{this.state.comic.title}</h1>
+          <h1 className="title">{this.state.comic.name}</h1>
           <p>{this.state.comic.description}</p>
         </div>
       </div>
