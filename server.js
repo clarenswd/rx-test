@@ -27,9 +27,10 @@ function buildEndpoint (jx_endpoint ){
     return  "http://gateway.marvel.com/v1/public/"+ jx_endpoint+ "?ts=" + ts + "&apikey=" + pub_key + "&hash=" + hashed_data;
 }
 
-
+/*
+  Endpoint to get Comics, Characters, etc
+*/
 app.get('/marvel/:endpoint/', function (req, res, next) {
-  
     url_end_point = buildEndpoint(req.params.endpoint);     
     request.get({ url: url_end_point },
            function(error, response, body) { 
@@ -40,15 +41,36 @@ app.get('/marvel/:endpoint/', function (req, res, next) {
     }); 
 });
 
+
+/*
+  Endpoint to get details of a specific comic
+*/
 app.get('/marvel/comic/:comicid', function (req, res, next) {
+  
     let  single_comic_url = "comics/"+req.params.comicid;
     url_end_point = buildEndpoint(single_comic_url);
-    console.log(url_end_point); 
+   
     request.get({ url: url_end_point },
-           function(error, response, body) { 
-              if (!error && response.statusCode == 200) { 
-                res.json(body); 
-              } 
+      function(error, response, body) { 
+        if (!error && response.statusCode == 200) { 
+          res.json(body); 
+        } 
+    }); 
+});
+
+/*
+  Endpoint to get Comics' characters
+*/
+app.get('/marvel/comic_characters/:comicid', function (req, res, next) {
+  
+    let  single_comic_url = "comics/"+req.params.comicid+"/characters";
+    url_end_point = buildEndpoint(single_comic_url);
+   
+    request.get({ url: url_end_point },
+      function(error, response, body) { 
+        if (!error && response.statusCode == 200) { 
+          res.json(body); 
+        } 
     }); 
 });
 

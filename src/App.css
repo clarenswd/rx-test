@@ -155,11 +155,11 @@
   .comic-full .imgWrapper {
     width: 40%;
     float: left; }
+    .comic-full .imgWrapper img {
+      width: 100%; }
     @media (max-width: 640px) {
       .comic-full .imgWrapper {
-        width: 100%; }
-        .comic-full .imgWrapper img {
-          width: 100%; } }
+        width: 100%; } }
   .comic-full .comic-description {
     width: 60%;
     display: block;
