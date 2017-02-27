@@ -8,19 +8,22 @@ import Comic from './Comic';
 export default class ComicPage extends React.Component {
   constructor(props){
     super(props);
-
+    this.state = {comic:{}};
   }
   componentDidMount() {
-    this.setState({comics:Comics.data.results, filterComics:Comics.data.results});
-
+    this.setState({comic:Comic.data.results[0]});
+    //Do the request with fetch here
   }
   render() {
     const id = this.props.params.id;
      
     return (
       <div className="comic-full">
-
+        {id}
       </div>
+
+
+
     );
   }
 }
