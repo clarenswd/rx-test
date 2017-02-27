@@ -13,7 +13,16 @@ export default class ComicCard extends React.Component {
         if (typeof this.props.prices !== 'undefined') {
           price_span = <span className="comicprice">${this.props.prices[0].price}</span>;
         }
-
+        let view_more;
+        if (this.props.moreurl !== "undefined"){
+          view_more = <Link to={`/characters/${this.props.id}`}>
+                        <button className="view_more">View more</button>
+                       </Link>;
+        }else{
+          view_more = <Link to={`/comic/${this.props.id}`}>
+                        <button className="view_more">View more</button>
+                       </Link>;
+        }
         
         return (
             <li>
@@ -26,10 +35,8 @@ export default class ComicCard extends React.Component {
                        <p>{(this.props.description)? this.props.description.substr(0,200)+"...":"No description for this comic"}</p>
                        
                        {price_span}
-
-                       <Link to={`/comic/${this.props.id}`}>
-                        <button className="view_more">View more</button>
-                       </Link>
+                       {view_more}
+                       
                     </div>
                   </div>
             </li>
